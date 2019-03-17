@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Kiva 2017 Crowdsourcing Data Visualization</title>
 	<script src="./dist/main.js"></script>
-	
+	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet" type='text/css'>
 	<script src="http://d3js.org/d3.v4.min.js"></script>
 	<script src="http://d3js.org/queue.v1.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
@@ -28,6 +28,17 @@
 			top: 30px;
 			font-size: 1.2em;
 		}
+		/* .incident{
+			fill:#ff483b;
+		} */
+		#timelapseContainer{
+			text-align: center;
+			position: relative;
+			top: 600px;
+		}
+		.hover {
+			fill: yellow;
+		}
 		.sphere{
 			fill: #5c5cad;
 		}
@@ -36,20 +47,18 @@
 			stroke: black;
 			stroke-opacity: 0.2;
 		}
-		.incident{
-			fill: steelblue;
-		}
-		.hover {
-			fill: yellow;
-		}
-		
 	</style>
 
 </head>
 <body>
 		<h1>2017 Kiva Loans Matched</h1>
-    <h2></h2>
+		<h2></h2>
+		<div id="timelapseContainer">
+        <input id="timelapse" type="range" min="0" max="11" value="0" step="1"/><br>
+        <span id="month">January</span>
+    </div>
 		<script>
+			
 			const svg = d3.select("body").append("svg");
 			const pathGenerator = d3.geoPath().projection(d3.geoNaturalEarth1());
 			
@@ -60,9 +69,13 @@
 
 			function makeMap(error,data) {
 				if (error) {
-					console.log("*** ERROR LOADING FILES: " + error + " ***");
+					console.log("Error loading file: " + error);
 					throw error	
 				}
+
+				let inputValue = null;
+				const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
 				svg.append('path')
 				.attr('class', 'sphere')
 				.attr('d', pathGenerator({type: 'Sphere'}));
@@ -74,12 +87,13 @@
 					.attr("d", pathGenerator)
 
 				const loans = svg.append('g');
+
 				loans.selectAll('path')
 				.data(kiva_json.features)
 				.enter()
 				.append('path')
-				.attr('fill','#900')
-				.attr('stroke', '#999')
+				.attr("fill", initialDate)
+				.attr('stroke', '#ccc')
 				.attr('d', pathGenerator)
 				.attr( 'class', 'incident')
 				.on("mouseover", function(d){
@@ -90,6 +104,42 @@
 					d3.select("h2").text("");
 					d3.select(this).attr("class", "incident");
 				});
+
+				d3.select("#timelapse")
+					.on("input", function() {
+						update(+this.value);
+				});
+
+				function update(value) {
+					
+						document.getElementById("month").innerHTML=month[value];
+						inputValue = month[value];
+						d3.selectAll(".incident")
+								.attr("fill", dateMatch);
+				}
+
+				function dateMatch(data, value) {
+					
+						const d = new Date(data.properties.date);
+						const m = month[d.getMonth()];
+						if (inputValue == m) {
+								this.parentElement.appendChild(this);
+								return "#ff483b";
+						} else {
+								return "#ffe596";
+						};
+				}
+
+				function initialDate(data,i){
+						const d = new Date(data.properties.date);
+						const m = month[d.getMonth()];
+						if (m == "January") {
+								this.parentElement.appendChild(this);
+								return "#ff483b";
+						} else {
+								return "#ffe596";
+						};
+				}
 			}
 
 
