@@ -1,76 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Kiva 2017 Crowdsourcing Data Visualization</title>
-	<script src="./dist/main.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet" type='text/css'>
-	<script src="http://d3js.org/d3.v4.min.js"></script>
-	<script src="http://d3js.org/queue.v1.min.js"></script>
-	<script src="http://d3js.org/topojson.v1.min.js"></script>
-	<style>svg{width:100%;height:500px;margin:0px auto;}</style>
-	<script src="./src/data/2017-kiva-sample.json"></script>
-	<style>
-		path:hover{
-			fill-opacity: 0.9;
-		}
-		body{
-			margin: 0px;
-			font-family:Arial, Helvetica, sans-serif;
-			overflow:hidden;
-		}
-		h1,h2,h3{
-			position: absolute;
-			font-weight: 100;
-			font-size: 1.5em;
-			left: 10px;
-		}
-		#country-name{
-			top: 30px;
-			font-size: 1.2em;
-		}
-		h2 {
-			top: 50px;
-			font-size: 1.2em;
-		}
-		h3 {
-			top: 70px;
-			font-size: 1.2em;
-		}
-		#timelapseContainer{
-			text-align: center;
-			position: relative;
-			top: 600px;
-		}
-		.hover {
-			fill: yellow;
-		}
-		.sphere{
-			fill: #5c5cad;
-		}
-		.country {
-			fill: #ffe596;
-			stroke: black;
-			stroke-opacity: 0.2;
-		}
-	</style>
-</head>
-<body>
-		<h1>2017 Kiva Loans Matched</h1>
-		<h2></h2>
-		<h2 id="country-name"></h2>
-		<h3></h3>
-		<div class="">
-
-		</div>
-		<div id="timelapseContainer">
-        <input id="timelapse" type="range" min="0" max="11" value="0" step="1"/><br>
-        <span id="month">January</span>
-    </div>
-		<script>
-			const svg = d3.select("body").append("svg");
+const svg = d3.select("body").append("svg");
 			const pathGenerator = d3.geoPath().projection(d3.geoNaturalEarth1());
 			
 			d3.queue()
@@ -105,7 +33,7 @@
 				.attr("fill", initialDate)
 				.attr('stroke', '#ccc')
 				.attr("r", function(d){
-					return Math.sqrt(parseInt(d.properties.loan_amount)) * 4;
+					return d.properties.loan_amount * 4;
 				})
 					.style("fill", "rgb(217,91,67)")
 					.style("opacity", 0.85)
@@ -158,6 +86,3 @@
 						};
 				}
 			}
-		</script>
-</body>
-</html>

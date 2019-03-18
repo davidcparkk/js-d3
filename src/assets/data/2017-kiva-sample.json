@@ -1,0 +1,906 @@
+
+const kiva_json = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1213979",
+        "loan_amount": "10000",
+        "sector": "Clothing",
+        "country": "Congo, Democratic Republic of the",
+        "funded_time": "2017-01-28 17:38:09+00:00",
+        "date": "1/1/2017",
+        "MPI": "0.102",
+        "geo": "(-4.4419311, 15.2662931)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.2662931,
+          -4.4419311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1213993",
+        "loan_amount": "1025",
+        "sector": "Arts",
+        "country": "Tajikistan",
+        "funded_time": "2017-01-02 18:30:23+00:00",
+        "date": "1/1/2017",
+        "MPI": "0.021",
+        "geo": "(38.5597722, 68.7870384)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          68.7870384,
+          38.5597722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214001",
+        "loan_amount": "975",
+        "sector": "Personal Use",
+        "country": "Lesotho",
+        "funded_time": "2017-01-02 07:11:21+00:00",
+        "date": "1/1/2017",
+        "MPI": "0.106",
+        "geo": "(-29.1746723, 27.8311428)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.8311428,
+          -29.1746723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214061",
+        "loan_amount": "575",
+        "sector": "Food",
+        "country": "Pakistan",
+        "funded_time": "2017-01-02 23:14:38+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.184",
+        "geo": "(31.1704063, 72.7097161)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.7097161,
+          31.1704063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214086",
+        "loan_amount": "875",
+        "sector": "Clothing",
+        "country": "Jordan",
+        "funded_time": "2017-01-21 13:27:59+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.005",
+        "geo": "(31.957151, 35.930865)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.930865,
+          31.957151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214136",
+        "loan_amount": "575",
+        "sector": "Agriculture",
+        "country": "Egypt",
+        "funded_time": "2017-01-17 21:48:15+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.006",
+        "geo": "(30.0444196, 31.2357116)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.2357116,
+          30.0444196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214155",
+        "loan_amount": "600",
+        "sector": "Agriculture",
+        "country": "Peru",
+        "funded_time": "2017-01-18 04:16:46+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.096",
+        "geo": "(-8.5155608, 126.0159255)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.0159255,
+          -8.5155608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214120",
+        "loan_amount": "1225",
+        "sector": "Agriculture",
+        "country": "Mali",
+        "funded_time": "2017-01-06 03:13:35+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.485",
+        "geo": "(14.4367876, -11.4452717)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.4452717,
+          14.4367876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214081",
+        "loan_amount": "700",
+        "sector": "Retail",
+        "country": "Tanzania, United Republic of",
+        "funded_time": "2017-01-02 21:26:17+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.332",
+        "geo": "(0.3215308, 32.5862002)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.5862002,
+          0.3215308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214129",
+        "loan_amount": "150",
+        "sector": "Agriculture",
+        "country": "Uganda",
+        "funded_time": "2017-01-02 19:22:50+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.076",
+        "geo": "(0.3475964, 32.5825197)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.5825197,
+          0.3475964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214163",
+        "loan_amount": "525",
+        "sector": "Housing",
+        "country": "Nicaragua",
+        "funded_time": "2017-01-09 03:49:17+00:00",
+        "date": "1/2/2017",
+        "MPI": "0.113",
+        "geo": "(13.7894404, -86.0121573)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.0121573,
+          13.7894404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214380",
+        "loan_amount": "125",
+        "sector": "Personal Use",
+        "country": "Cambodia",
+        "funded_time": "2017-01-18 06:58:05+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.097",
+        "geo": "(13.6672596, 102.8975098)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.8975098,
+          13.6672596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214505",
+        "loan_amount": "100",
+        "sector": "Agriculture",
+        "country": "Kenya",
+        "funded_time": "2017-01-03 20:51:34+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.075",
+        "geo": "(-4.0627412, 39.6771481)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.6771481,
+          -4.0627412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214561",
+        "loan_amount": "250",
+        "sector": "Services",
+        "country": "Rwanda",
+        "funded_time": "2017-01-15 16:17:45+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.292",
+        "geo": "(-1.940278, 29.873888)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.873888,
+          -1.940278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214611",
+        "loan_amount": "375",
+        "sector": "Food",
+        "country": "Colombia",
+        "funded_time": "2017-01-18 00:27:55+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.056",
+        "geo": "(10.7582091, -72.8451323)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8451323,
+          10.7582091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214617",
+        "loan_amount": "800",
+        "sector": "Food",
+        "country": "Ghana",
+        "funded_time": "2017-01-04 17:30:35+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.101",
+        "geo": "(6.7470436, -1.5208624)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5208624,
+          6.7470436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214200",
+        "loan_amount": "100",
+        "sector": "Food",
+        "country": "Philippines",
+        "funded_time": "2017-01-03 06:46:11+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.026",
+        "geo": "(15.5942883, -90.14949879999999)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1494988,
+          15.5942883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214627",
+        "loan_amount": "525",
+        "sector": "Agriculture",
+        "country": "Ecuador",
+        "funded_time": "2017-01-04 17:09:10+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.014",
+        "geo": "(-1.4693018, -78.8169396)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.8169396,
+          -1.4693018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214199",
+        "loan_amount": "525",
+        "sector": "Housing",
+        "country": "Indonesia",
+        "funded_time": "2017-01-14 06:57:37+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.077",
+        "geo": "(12.4315534, -86.87221459999999)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.8722146,
+          12.4315534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214598",
+        "loan_amount": "1450",
+        "sector": "Retail",
+        "country": "Bolivia, Plurinational State of",
+        "funded_time": "0",
+        "date": "1/3/2017",
+        "MPI": "0.145",
+        "geo": "(-20.0249144, -64.1478236)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -64.1478236,
+          -20.0249144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214579",
+        "loan_amount": "200",
+        "sector": "Clothing",
+        "country": "Togo",
+        "funded_time": "2017-01-04 13:29:36+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.067",
+        "geo": "(6.1724969, 1.2313618)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2313618,
+          6.1724969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214535",
+        "loan_amount": "4350",
+        "sector": "Retail",
+        "country": "Burundi",
+        "funded_time": "2017-01-18 18:22:50+00:00",
+        "date": "1/3/2017",
+        "MPI": "0.164",
+        "geo": "(-3.4146958, 29.3598782)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3598782,
+          -3.4146958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1215468",
+        "loan_amount": "1000",
+        "sector": "Food",
+        "country": "El Salvador",
+        "funded_time": "2017-01-05 02:47:08+00:00",
+        "date": "1/4/2017",
+        "MPI": "0.03",
+        "geo": "(13.8216148, -89.9253233)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.9253233,
+          13.8216148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1215465",
+        "loan_amount": "2575",
+        "sector": "Agriculture",
+        "country": "Sierra Leone",
+        "funded_time": "2017-01-15 22:53:52+00:00",
+        "date": "1/4/2017",
+        "MPI": "0.537",
+        "geo": "(8.280219599999999, -10.5718086)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.5718086,
+          8.2802196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1215143",
+        "loan_amount": "250",
+        "sector": "Agriculture",
+        "country": "Burkina Faso",
+        "funded_time": "2017-01-05 15:30:37+00:00",
+        "date": "1/4/2017",
+        "MPI": "0.591",
+        "geo": "(8.8556838, 7.179025999999999)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.179026,
+          8.8556838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1215435",
+        "loan_amount": "800",
+        "sector": "Retail",
+        "country": "Guatemala",
+        "funded_time": "2017-01-30 22:11:24+00:00",
+        "date": "1/4/2017",
+        "MPI": "0.214",
+        "geo": "(7.495263700000001, -10.0807298)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.0807298,
+          7.4952637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1215240",
+        "loan_amount": "150",
+        "sector": "Agriculture",
+        "country": "Madagascar",
+        "funded_time": "2017-01-05 04:18:15+00:00",
+        "date": "1/4/2017",
+        "MPI": "0.178",
+        "geo": "(30.8753556, 31.03351)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.03351,
+          30.8753556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1214666",
+        "loan_amount": "500",
+        "sector": "Personal Use",
+        "country": "Lao People's Democratic Republic",
+        "funded_time": "2017-01-04 06:28:10+00:00",
+        "date": "1/4/2017",
+        "MPI": "0.012",
+        "geo": "(17.9757058, 102.6331035)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          102.6331035,
+          17.9757058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1215926",
+        "loan_amount": "175",
+        "sector": "Food",
+        "country": "Liberia",
+        "funded_time": "2017-01-09 14:07:56+00:00",
+        "date": "1/5/2017",
+        "MPI": "0.407",
+        "geo": "(6.7562926, -10.8451467)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.8451467,
+          6.7562926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1216799",
+        "loan_amount": "2075",
+        "sector": "Food",
+        "country": "Brazil",
+        "funded_time": "2017-01-08 20:48:57+00:00",
+        "date": "1/6/2017",
+        "MPI": "0.072",
+        "geo": "(-9.0237964, -70.81199529999999)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.8119953,
+          -9.0237964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1216670",
+        "loan_amount": "500",
+        "sector": "Food",
+        "country": "Cameroon",
+        "funded_time": "2017-01-18 01:28:03+00:00",
+        "date": "1/6/2017",
+        "MPI": "0.269",
+        "geo": "(6.9181954, 12.8054753)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.8054753,
+          6.9181954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1216976",
+        "loan_amount": "1800",
+        "sector": "Personal Use",
+        "country": "Zambia",
+        "funded_time": "2017-01-10 14:23:55+00:00",
+        "date": "1/8/2017",
+        "MPI": "0.292",
+        "geo": "(-14.3112263, 28.299435)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.299435,
+          -14.3112263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1217506",
+        "loan_amount": "575",
+        "sector": "Agriculture",
+        "country": "Myanmar",
+        "funded_time": "2017-01-16 18:58:33+00:00",
+        "date": "1/9/2017",
+        "MPI": "0.171",
+        "geo": "(17.0342125, 95.22666749999999)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          95.2266675,
+          17.0342125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1217612",
+        "loan_amount": "375",
+        "sector": "Services",
+        "country": "Mozambique",
+        "funded_time": "2017-01-14 22:36:51+00:00",
+        "date": "1/9/2017",
+        "MPI": "0.443",
+        "geo": "(-12.7826202, 36.6093926)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.6093926,
+          -12.7826202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1218300",
+        "loan_amount": "1400",
+        "sector": "Education",
+        "country": "Zimbabwe",
+        "funded_time": "2017-01-11 13:59:58+00:00",
+        "date": "1/10/2017",
+        "MPI": "0.014",
+        "geo": "(-20.1325066, 28.626479)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.626479,
+          -20.1325066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1218508",
+        "loan_amount": "1500",
+        "sector": "Construction",
+        "country": "Timor-Leste",
+        "funded_time": "2017-01-17 20:45:03+00:00",
+        "date": "1/11/2017",
+        "MPI": "0.379",
+        "geo": "(3.427805, -76.486824)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.486824,
+          3.427805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1219496",
+        "loan_amount": "1250",
+        "sector": "Food",
+        "country": "Malawi",
+        "funded_time": "2017-01-14 15:25:51+00:00",
+        "date": "1/12/2017",
+        "MPI": "0.283",
+        "geo": "(-15.0506595, 35.0828588)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0828588,
+          -15.0506595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1219491",
+        "loan_amount": "400",
+        "sector": "Education",
+        "country": "Nigeria",
+        "funded_time": "2017-01-22 16:55:32+00:00",
+        "date": "1/12/2017",
+        "MPI": "0.548",
+        "geo": "(13.0058731, 5.2475518)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2475518,
+          13.0058731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1220925",
+        "loan_amount": "4625",
+        "sector": "Food",
+        "country": "Senegal",
+        "funded_time": "2017-01-17 16:45:17+00:00",
+        "date": "1/16/2017",
+        "MPI": "0.449",
+        "geo": "(14.72001, -17.465533)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.465533,
+          14.72001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1221055",
+        "loan_amount": "375",
+        "sector": "Food",
+        "country": "Nepal",
+        "funded_time": "2017-01-16 19:03:58+00:00",
+        "date": "1/16/2017",
+        "MPI": "0.05",
+        "geo": "(26.8081234, 87.293039)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          87.293039,
+          26.8081234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1223013",
+        "loan_amount": "325",
+        "sector": "Personal Use",
+        "country": "Yemen",
+        "funded_time": "2017-01-21 01:38:08+00:00",
+        "date": "1/19/2017",
+        "MPI": "0.2",
+        "geo": "(13.9720929, 44.1625338)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.1625338,
+          13.9720929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1266423",
+        "loan_amount": "50000",
+        "sector": "Agriculture",
+        "country": "Benin",
+        "funded_time": "2017-04-18 06:42:43+00:00",
+        "date": "3/24/2017",
+        "MPI": "0.528",
+        "geo": "(10.9681093, 2.7779813)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7779813,
+          10.9681093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1277935",
+        "loan_amount": "8000",
+        "sector": "Arts",
+        "country": "China",
+        "funded_time": "2017-04-20 18:48:08+00:00",
+        "date": "4/11/2017",
+        "MPI": "0.008",
+        "geo": "(42.4708101, -92.35780319999999)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.3578032,
+          42.4708101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1294308",
+        "loan_amount": "50000",
+        "sector": "Agriculture",
+        "country": "Cote D'Ivoire",
+        "funded_time": "2017-05-18 05:06:35+00:00",
+        "date": "5/8/2017",
+        "MPI": "0.359",
+        "geo": "(-8.6529334, 117.3616476)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.3616476,
+          -8.6529334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1322478",
+        "loan_amount": "10000",
+        "sector": "Arts",
+        "country": "Bhutan",
+        "funded_time": "0",
+        "date": "6/19/2017",
+        "MPI": "0.042",
+        "geo": "(27.641839, 90.6773046)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.6773046,
+          27.641839
+        ]
+      }
+    }
+  ]
+}

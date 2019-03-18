@@ -1,0 +1,42 @@
+path:hover{
+  fill-opacity: 0.9;
+}
+body{
+  margin: 0px;
+  font-family:Arial, Helvetica, sans-serif;
+  overflow:hidden;
+}
+h1,h2,h3{
+  position: absolute;
+  font-weight: 100;
+  font-size: 1.5em;
+  left: 10px;
+}
+#country-name{
+  top: 30px;
+  font-size: 1.2em;
+}
+h2 {
+  top: 50px;
+  font-size: 1.2em;
+}
+h3 {
+  top: 70px;
+  font-size: 1.2em;
+}
+#timelapseContainer{
+  text-align: center;
+  position: relative;
+  top: 600px;
+}
+.hover {
+  fill: yellow;
+}
+.sphere{
+  fill: #5c5cad;
+}
+.country {
+  fill: #ffe596;
+  stroke: black;
+  stroke-opacity: 0.2;
+}
