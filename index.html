@@ -14,13 +14,18 @@
 	<script src="./src/assets/data/2017-kiva-sample.json"></script>
 	<style>
 		.loan-details{
-			border: 1px solid black;
+			border: 1px solid white;
 			height: 175px;
 			width: 375px;
 			top: 20px;
 			font-size: 20px;
 			margin-top: 40px;
-			padding-left: 20px
+			padding-left: 20px;
+			color: white;
+		}
+		#month{
+			color: white;
+			font-weight: bold;
 		}
 		.about{
 			height: 175px;
@@ -28,6 +33,7 @@
 			top: 20px;
 			font-size: 20px;
 			margin-top: 40px;
+			color: white;
 		}
 		.sidebar-container{
 			float: right;
@@ -35,6 +41,7 @@
 			position: absolute;
 			right: 1%;
 			height: 95%;
+			color: white;
 		}
 		path:hover{
 			fill-opacity: 0.9;
@@ -42,18 +49,19 @@
 		body{
 			margin: 0px;
 			overflow:hidden;	
-			background-color: #F5f5dc;
+			background-color: #003366;
 		}
 		h1{
 			position: relative;
 			font-weight: bold;
+			color: white;
 		}
 		.intro{
 			position: relative;
 			font-weight: 70;
 			font-size: 1.2em;
 			width: 270px;
-			
+			color: white;
 			word-wrap: break-word;
 		}
 		#timelapseContainer{
@@ -63,13 +71,13 @@
 			top: 600px;
 		}
 		.hover {
-			fill: green;
+			fill: yellow;
 		}
 		.sphere{
 			fill: #5c5cad;
 		}
 		.country {
-			fill: #ffe596;
+			fill: white;
 			stroke: black;
 			stroke-opacity: 0.2;
 		}
@@ -164,9 +172,9 @@
 						const m = month[d.getMonth()];
 						if (inputValue == m) {
 								this.parentElement.appendChild(this);
-								return "#ff483b";
+								return "#bb00bb";
 						} else {
-								return "#ffe596";
+								return "white";
 						};
 				}
 
@@ -175,9 +183,9 @@
 						const m = month[d.getMonth()];
 						if (m == "January") {
 								this.parentElement.appendChild(this);
-								return "#ff483b";
+								return "#bb00bb";
 						} else {
-								return "#ffe596";
+								return "white";
 						};
 				}
 			}
