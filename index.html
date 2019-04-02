@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,11 +15,11 @@
 	<style>
 		.loan-details{
 			border: 1px solid white;
-			height: 220px;
+			height: 200px;
 			width: 375px;
 			top: 20px;
-			font-size: 20px;
-			margin-top: 40px;
+			font-size: 18px;
+			margin-top: 20px;
 			padding-left: 20px;
 			color: white;
 		}
@@ -60,7 +60,7 @@
 			position: relative;
 			font-weight: 70;
 			font-size: 1.2em;
-			width: 270px;
+			width: 100%;
 			color: white;
 			word-wrap: break-word;
 		}
@@ -84,10 +84,15 @@
 	</style>
 </head>
 <body>
+	<div class="main-container">
 		<div class="sidebar-container">
 				<h1>Global Kiva Loans Matched</h1>
+
 				<div class="intro">
-						Time Period Covered: <br/>January 2017 to July 2017
+						<p>
+							What areas are most utilizing online platforms to crowdfund their latest projects? <strong>Drag the range slider to filter loans by month over 2015.</strong>
+						</p>
+						Time Period Covered: <br/>January 2015 to December 2015
 				</div>
 				<div class='loan-details'>
 				<h3>Loan Details:</h3>
@@ -97,7 +102,7 @@
 				<div id="country-partner"></div>
 			</div>
 			<div class="about">
-					<h3>About Kiva:</h3>
+					<p>About Kiva:</p>
 					Kiva.org is an online crowdfunding platform to extend financial services to poor and financially excluded people around the world. Kiva lenders have provided over $1 billion dollars in loans to over 2 million people.
 			</div>
 		</div>
@@ -105,94 +110,96 @@
 		<div id="timelapseContainer">
         <input id="timelapse" type="range" min="0" max="11" value="0" step="1"/><br>
         <span id="month">January</span>
-    </div>
+		</div>
 		<script>
-			const svg = d3.select("body").append("svg");
-			const pathGenerator = d3.geoPath().projection(d3.geoNaturalEarth1());
-			
-			d3.queue()
-				.defer(d3.json, "https://unpkg.com/world-atlas@1/world/110m.json")
-				.await(makeMap)
-
-			function makeMap(error,data) {
-				if (error) {
-					console.log("Error loading file: " + error);
-					throw error	
+				const svg = d3.select("body").append("svg");
+				const pathGenerator = d3.geoPath().projection(d3.geoNaturalEarth1());
+				
+				d3.queue()
+					.defer(d3.json, "https://unpkg.com/world-atlas@1/world/110m.json")
+					.await(makeMap)
+	
+				function makeMap(error,data) {
+					if (error) {
+						console.log("Error loading file: " + error);
+						throw error	
+					}
+	
+					let inputValue = null;
+					const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	
+					svg.append('path')
+					.attr('class', 'sphere')
+					.attr('d', pathGenerator({type: 'Sphere'}));
+	
+					svg.selectAll("path")
+						.data(topojson.feature(data,data.objects.countries).features)
+						.enter().append("path")
+						.attr('class','country')
+						.attr("d", pathGenerator)
+	
+					const loans = svg.append('g');
+	
+					loans.selectAll('path')
+					.data(kiva_json.features)
+					.enter()
+					.append('path')
+					.attr("fill", initialDate)
+					.attr('stroke', '#ccc')
+					.attr('d', pathGenerator)
+					.attr( 'class', 'incident')
+					.on("mouseover", function(d){
+						d3.select("#country-name").text("Country:  " + d.properties.country);
+						d3.select("#country-sector").text("Sector:  " + d.properties.sector);
+						d3.select("#country-loan").text("Loan Amount:  $" + parseInt(d.properties.loan_amount));
+						d3.select("#country-partner").text("Partner Name:  " + (d.properties.partner_name));
+						d3.select(this).attr('class', 'incident hover');
+					})
+					.on("mouseout", function(d){
+						d3.select("#country-name").text("");
+						d3.select("#country-sector").text("");
+						d3.select("#country-loan").text("");
+						d3.select("#country-partner").text("");
+						d3.select(this).attr("class", "incident");
+					});
+	
+					d3.select("#timelapse")
+						.on("input", function() {
+							update(+this.value);
+					});
+	
+					function update(value) {
+							document.getElementById("month").innerHTML=month[value];
+							inputValue = month[value];
+							d3.selectAll(".incident")
+									.attr("fill", dateMatch);
+									
+					}
+	
+					function dateMatch(data, value) {
+							const d = new Date(data.properties.date);
+							const m = month[d.getMonth()];
+							if (inputValue == m) {
+									this.parentElement.appendChild(this);
+									return "orange";
+							} else {
+									return "white";
+							};
+					}
+	
+					function initialDate(data,i){
+							const d = new Date(data.properties.date);
+							const m = month[d.getMonth()];
+							if (m == "January") {
+									this.parentElement.appendChild(this);
+									return "orange";
+							} else {
+									return "white";
+							};
+					}
 				}
-
-				let inputValue = null;
-				const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-				svg.append('path')
-				.attr('class', 'sphere')
-				.attr('d', pathGenerator({type: 'Sphere'}));
-
-				svg.selectAll("path")
-					.data(topojson.feature(data,data.objects.countries).features)
-					.enter().append("path")
-					.attr('class','country')
-					.attr("d", pathGenerator)
-
-				const loans = svg.append('g');
-
-				loans.selectAll('path')
-				.data(kiva_json.features)
-				.enter()
-				.append('path')
-				.attr("fill", initialDate)
-				.attr('stroke', '#ccc')
-				.attr('d', pathGenerator)
-				.attr( 'class', 'incident')
-				.on("mouseover", function(d){
-					d3.select("#country-name").text("Country:  " + d.properties.country);
-					d3.select("#country-sector").text("Sector:  " + d.properties.sector);
-					d3.select("#country-loan").text("Loan Amount:  $" + parseInt(d.properties.loan_amount));
-					d3.select("#country-partner").text("Partner Name:  " + (d.properties.partner_name));
-					d3.select(this).attr('class', 'incident hover');
-				})
-				.on("mouseout", function(d){
-					d3.select("#country-name").text("");
-					d3.select("#country-sector").text("");
-					d3.select("#country-loan").text("");
-					d3.select("#country-partner").text("");
-					d3.select(this).attr("class", "incident");
-				});
-
-				d3.select("#timelapse")
-					.on("input", function() {
-						update(+this.value);
-				});
-
-				function update(value) {
-						document.getElementById("month").innerHTML=month[value];
-						inputValue = month[value];
-						d3.selectAll(".incident")
-								.attr("fill", dateMatch);
-								
-				}
-
-				function dateMatch(data, value) {
-						const d = new Date(data.properties.date);
-						const m = month[d.getMonth()];
-						if (inputValue == m) {
-								this.parentElement.appendChild(this);
-								return "orange";
-						} else {
-								return "white";
-						};
-				}
-
-				function initialDate(data,i){
-						const d = new Date(data.properties.date);
-						const m = month[d.getMonth()];
-						if (m == "January") {
-								this.parentElement.appendChild(this);
-								return "orange";
-						} else {
-								return "white";
-						};
-				}
-			}
-		</script>
+			</script>
+	</div>
+		
 </body>
 </html>
